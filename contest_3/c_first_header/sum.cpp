@@ -1,5 +1,7 @@
 #include "sum.h"
 
-int Sum(int x, int y) {
-  return x + y;
+#include <cstdint>
+
+int64_t Sum(int64_t a, int64_t b) {
+  return a + b;
 }
