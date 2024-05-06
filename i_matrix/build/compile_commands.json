@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/projects/hse/cpp/i_matrix/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -O0 -Wall -std=gnu++17 -o CMakeFiles\\matrix_test.dir\\matrix.cpp.obj -c C:\\projects\\hse\\cpp\\i_matrix\\matrix.cpp",
+  "file": "C:\\projects\\hse\\cpp\\i_matrix\\matrix.cpp",
+  "output": "CMakeFiles\\matrix_test.dir\\matrix.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/i_matrix/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -O0 -Wall -std=gnu++17 -o CMakeFiles\\matrix_test.dir\\main.cpp.obj -c C:\\projects\\hse\\cpp\\i_matrix\\main.cpp",
+  "file": "C:\\projects\\hse\\cpp\\i_matrix\\main.cpp",
+  "output": "CMakeFiles\\matrix_test.dir\\main.cpp.obj"
+}
+]
