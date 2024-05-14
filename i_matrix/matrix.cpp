@@ -10,6 +10,6 @@ Matrix::Matrix(size_t rows_num, size_t cols_num)
 
   // Либо оба нули, либо оба не нули.
   if (rows_num == 0 || cols_num == 0) {
-    // TODO: throw runtime exception
+    // TODO: throw runtime exception 
   }
 }

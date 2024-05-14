@@ -37,9 +37,16 @@ void test02() {
   assert(true);
 }
 
+void test03() {
+  Matrix m(5, 5);
+  // m.
+  assert(true);
+}
+
 int main() {
   test01();
   test02();
+  test03(); 
   std::cout << "Allright";
   return 0;
 }

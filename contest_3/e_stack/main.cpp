@@ -13,19 +13,19 @@ int main() {
       int x = 0;
       std::cin >> x;
       v.push_back(x);
-      std::cout << "ok";
+      std::cout << "ok" << std::endl;
     } else if (com == "pop") {
-      std::cout << v.back();
+      std::cout << v.back() << std::endl;
       v.pop_back();
     } else if (com == "back") {
-      std::cout << v.back();
+      std::cout << v.back() << std::endl;
     } else if (com == "size") {
-      std::cout << v.size();
+      std::cout << v.size() << std::endl;
     } else if (com == "clear") {
       v = {};
-      std::cout << "ok";
+      std::cout << "ok" << std::endl;
     } else if (com == "exit") {
-      std::cout << "bye";
+      std::cout << "bye" << std::endl;
       return 0;
     }
   }

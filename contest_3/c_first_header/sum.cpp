@@ -1,5 +1,5 @@
 #include "sum.h"
 
-int Sum(int x, int y) {
+int64_t Sum(int x, int y) {
   return x + y;
 }
