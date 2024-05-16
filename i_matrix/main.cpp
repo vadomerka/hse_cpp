@@ -3,8 +3,8 @@
  * Разработать класс Матрица, который удовлетворяет следующим требованиям:
  * 1) Для представления элементов матрицы будем использовать наиболее
  * компактное. 2) Используем правильное управление ресурсами (памятью):
- *  - Распределение
- *  - Освобождение
+ *  + Распределение
+ *  + Освобождение
  *  - Глубокое копирование
  * 3) Добавляем операционную семантику, ожидаемую для математического
  * объекта Матрица (сложение, умножение, транспонирование, проверка
@@ -33,20 +33,55 @@ void test01() {
 
 void test02() {
   Matrix m;
-  // m.
   assert(true);
 }
 
 void test03() {
-  Matrix m(5, 5);
-  // m.
-  assert(true);
+  Matrix m(3, 4, 42);
+  assert(m.GetRowsNum() == 3 && m.GetColsNum() == 4);
+  assert(m.At(0, 0) == 42);
+}
+
+void PrintMatrixRow(Matrix::Row row) {
+  // row[0] // нулевой элемент переданной строки
+  for (size_t j = 0; j < row.Size(); j++)
+  {
+    std::cout << row[j] << ' ';
+  }
+}
+
+// Передаем row по значению, потому что это похоже на итератор (а они передаются по значению).
+void DoubleRow(Matrix::Row row) {
+  // row[0] // нулевой элемент переданной строки
+  for (size_t j = 0; j < row.Size(); j++)
+  {
+    row[j] *= 2;
+  }
+}
+
+void test04() {
+  Matrix m(3, 4, 42);
+  // Matrix::Row row(1, &m); // Возможно, но недопустимо.
+  PrintMatrixRow(m[1]);
+  DoubleRow(m[1]);
+  PrintMatrixRow(m[1]);
+  // PrintMatrixRow(m[1]); // Распечатывает 1 строку.
+  // PrintMatrixRow(m(2)); // Распечатывает 2 столбец.
+}
+
+void PrintKthRow(const Matrix& m, size_t k) {
+  // PrintMatrixRow(m[k]);
+}
+
+void test05() {
+  Matrix m(3, 4, 42);
+  PrintKthRow(m, 1);
 }
 
 int main() {
-  test01();
-  test02();
-  test03(); 
+  int&& rx = 6;
+
+  int& lx = rx;
   std::cout << "Allright";
   return 0;
 }
