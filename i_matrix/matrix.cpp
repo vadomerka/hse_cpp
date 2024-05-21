@@ -1,39 +1,37 @@
 #include "matrix.h"
+
 #include <stdexcept>
 
-Matrix::Matrix(size_t rows_num, size_t cols_num) 
+Matrix::Matrix(size_t rowsNum, size_t colsNum) 
   : Matrix()
 {
-  // TODO: интуиция...
-  if (rows_num == 0 && cols_num == 0) {
+  if (!rowsNum && !colsNum) {
     return;
   }
 
-  // Либо оба нули, либо оба не нули.
-  if (rows_num == 0 || cols_num == 0) {
-    throw std::invalid_argument("Arguments must be either both zero or non zero.");
+  //Либо оба нули, либо оба не нули.
+  if (!rowsNum || !colsNum) {
+    throw std::invalid_argument{"Arguments must be either both zero or non-zero."};
   }
 
-  _rows_num = rows_num;
-  _cols_num = cols_num;
-  _storage = new double[rows_num * cols_num];
+  rowsNum_ = rowsNum;
+  colsNum_ = colsNum;
+  storage_ = new double[rowsNum * colsNum];
+
 }
 
-Matrix::Matrix(size_t rows_num, size_t cols_num, double def) 
-  : Matrix(rows_num, cols_num)
-{
-  for (size_t i = 0; i < rows_num; i++)
+Matrix::Matrix(size_t rowsNum, size_t colsNum, double def)
+  : Matrix(rowsNum, colsNum)
   {
-    for (size_t j = 0; j < cols_num; j++)
-    {
-      GetEl(i, j) = def;
+    for (size_t i = 0; i < rowsNum; ++i) {
+      for (size_t j = 0; j < colsNum; ++j) {
+        GetEl(i, j) = def;
+      }
     }
   }
-  
-}
 
 void Matrix::CheckIJ(size_t i, size_t j) const {
-  if (i >= _rows_num || j >= _cols_num) {
-    throw std::out_of_range("Incorrect row or column.");
+  if (i >= rowsNum_ || j >= colsNum_) {
+    throw std::out_of_range{"Incorrect row or column."};
   }
 }
