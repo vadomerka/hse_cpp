@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\IShape.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\IShape.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\IShape.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\IShape.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\point.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\point.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\point.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\point.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\vector.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\vector.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\vector.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\vector.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\main.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\main.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\main.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\main.cpp.obj"
+}
+]

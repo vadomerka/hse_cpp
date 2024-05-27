@@ -2,17 +2,20 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++ build active file",
-            "command": "/usr/bin/g++",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\msys64\\mingw64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "${workspaceFolder}\\main.cpp",
+                "${workspaceFolder}\\vector.cpp",
+                "${workspaceFolder}\\point.cpp",
+                "${workspaceFolder}\\IShape.cpp",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "C:\\msys64\\mingw64\\bin"
             },
             "problemMatcher": [
                 "$gcc"
