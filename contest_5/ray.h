@@ -31,14 +31,14 @@ public:
 
 public:
   void Move(const Vector& v) override;
-  bool ContainsPoint(const Point& p) override;
-  bool CrossesSegment(const Segment &) override;
-  Ray* Clone() override;
-  std::string ToString() override;
+  bool ContainsPoint(const Point& p) const override;
+  bool CrossesSegment(const Segment &) const override;
+  Ray* Clone() const override;
+  std::string ToString() const override;
 
 public:
   bool operator==(const Ray& other) const {
-    return this == &other;
+    return this == &other || p_ == other.p_ && Vector::AreCoDirected(v_, other.v_);
   }
   bool operator!=(const Ray& other) const {
     return !(*this == other);
@@ -47,10 +47,11 @@ public:
 public:
   Point GetPoint() const { return p_; }
   Vector GetVector() const { return v_; }
+  Line GetLine() const;
 
   double Distance(const Point& p) const;
-  // bool PointPlane(const Point& p1, const Point& p2) const;
   bool IsParralel(const Ray& other) const;
+  bool ContainsSegment(const Segment &) const;
 
 private:
   void Swap(Ray& p1, Ray& p2) {

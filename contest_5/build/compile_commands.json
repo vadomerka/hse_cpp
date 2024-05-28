@@ -7,6 +7,12 @@
 },
 {
   "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\segment.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\segment.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\segment.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\segment.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
   "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\ray.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\ray.cpp",
   "file": "C:\\projects\\hse\\cpp\\contest_5\\ray.cpp",
   "output": "CMakeFiles\\contest_5.dir\\ray.cpp.obj"

@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/projects/hse/cpp/contest_4/b_string_view/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\b_string_view.dir\\string_view.cpp.obj -c C:\\projects\\hse\\cpp\\contest_4\\b_string_view\\string_view.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_4\\b_string_view\\string_view.cpp",
+  "output": "CMakeFiles\\b_string_view.dir\\string_view.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_4/b_string_view/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\b_string_view.dir\\main.cpp.obj -c C:\\projects\\hse\\cpp\\contest_4\\b_string_view\\main.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_4\\b_string_view\\main.cpp",
+  "output": "CMakeFiles\\b_string_view.dir\\main.cpp.obj"
+}
+]

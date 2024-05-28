@@ -20,6 +20,8 @@ public:
   , c_(z)
   {}
 
+  Line(Point p, Vector v);
+
   Line(const Line& other)
   : a_(other.a_)
   , b_(other.b_)
@@ -32,10 +34,10 @@ public:
 
 public:
   void Move(const Vector& v) override;
-  bool ContainsPoint(const Point& p) override;
-  bool CrossesSegment(const Segment &) override;
-  Line* Clone() override;
-  std::string ToString() override;
+  bool ContainsPoint(const Point& p) const override;
+  bool CrossesSegment(const Segment &) const override;
+  Line* Clone() const override;
+  std::string ToString() const override;
 
 public:
   bool operator==(const Line& other) const {
@@ -49,11 +51,14 @@ public:
   int GetA() const { return a_; }
   int GetB() const { return b_; }
   int GetC() const { return c_; }
+  Point GetP() const;
   Vector GetN() const;
   Vector GetV() const;
 
   bool PointPlane(const Point& p1, const Point& p2) const;
   bool IsParralel(const Line& other) const;
+
+  double Distance(const Point& p) const;
 
 private:
   void Swap(Line& p1, Line& p2) {

@@ -223,6 +223,12 @@ build CMakeFiles/contest_5.dir/IShape.cpp.obj: CXX_COMPILER__contest_5_unscanned
   OBJECT_DIR = CMakeFiles\contest_5.dir
   OBJECT_FILE_DIR = CMakeFiles\contest_5.dir
 
+build CMakeFiles/contest_5.dir/segment.cpp.obj: CXX_COMPILER__contest_5_unscanned_Debug C$:/projects/hse/cpp/contest_5/segment.cpp || cmake_object_order_depends_target_contest_5
+  DEP_FILE = CMakeFiles\contest_5.dir\segment.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\contest_5.dir
+  OBJECT_FILE_DIR = CMakeFiles\contest_5.dir
+
 build CMakeFiles/contest_5.dir/ray.cpp.obj: CXX_COMPILER__contest_5_unscanned_Debug C$:/projects/hse/cpp/contest_5/ray.cpp || cmake_object_order_depends_target_contest_5
   DEP_FILE = CMakeFiles\contest_5.dir\ray.cpp.obj.d
   FLAGS = -g
@@ -261,7 +267,7 @@ build CMakeFiles/contest_5.dir/main.cpp.obj: CXX_COMPILER__contest_5_unscanned_D
 #############################################
 # Link the executable contest_5.exe
 
-build contest_5.exe: CXX_EXECUTABLE_LINKER__contest_5_Debug CMakeFiles/contest_5.dir/IShape.cpp.obj CMakeFiles/contest_5.dir/ray.cpp.obj CMakeFiles/contest_5.dir/line.cpp.obj CMakeFiles/contest_5.dir/point.cpp.obj CMakeFiles/contest_5.dir/vector.cpp.obj CMakeFiles/contest_5.dir/main.cpp.obj
+build contest_5.exe: CXX_EXECUTABLE_LINKER__contest_5_Debug CMakeFiles/contest_5.dir/IShape.cpp.obj CMakeFiles/contest_5.dir/segment.cpp.obj CMakeFiles/contest_5.dir/ray.cpp.obj CMakeFiles/contest_5.dir/line.cpp.obj CMakeFiles/contest_5.dir/point.cpp.obj CMakeFiles/contest_5.dir/vector.cpp.obj CMakeFiles/contest_5.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\contest_5.dir

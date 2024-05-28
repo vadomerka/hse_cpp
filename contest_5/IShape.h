@@ -28,13 +28,13 @@ class Polygon;
 class IShape {
 public:
   virtual void Move(const Vector &) = 0;
-  virtual bool ContainsPoint(const Point &) = 0;
-  virtual bool CrossesSegment(const Segment &) = 0;
-  virtual IShape* Clone() = 0;
-  virtual std::string ToString() = 0;
+  virtual bool ContainsPoint(const Point &) const = 0;
+  virtual bool CrossesSegment(const Segment &) const = 0;
+  virtual IShape* Clone() const = 0;
+  virtual std::string ToString() const = 0;
 
 protected:
-  std::string StringFormat(std::string class_name, std::string args[], size_t length);
+  std::string StringFormat(std::string class_name, std::string args[], size_t length) const;
 
   bool IsMult(int n1, int n2);
 };

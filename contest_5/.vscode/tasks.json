@@ -12,6 +12,7 @@
                 "${workspaceFolder}\\point.cpp",
                 "${workspaceFolder}\\line.cpp",
                 "${workspaceFolder}\\ray.cpp",
+                "${workspaceFolder}\\segment.cpp",
                 "${workspaceFolder}\\IShape.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"

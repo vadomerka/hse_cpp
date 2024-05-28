@@ -1,12 +1,6 @@
 [
 {
   "directory": "C:/projects/hse/cpp/contest_4/a_rational/build",
-  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\a_rational.dir\\rational_exceptions.cpp.obj -c C:\\projects\\hse\\cpp\\contest_4\\a_rational\\rational_exceptions.cpp",
-  "file": "C:\\projects\\hse\\cpp\\contest_4\\a_rational\\rational_exceptions.cpp",
-  "output": "CMakeFiles\\a_rational.dir\\rational_exceptions.cpp.obj"
-},
-{
-  "directory": "C:/projects/hse/cpp/contest_4/a_rational/build",
   "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\a_rational.dir\\rational.cpp.obj -c C:\\projects\\hse\\cpp\\contest_4\\a_rational\\rational.cpp",
   "file": "C:\\projects\\hse\\cpp\\contest_4\\a_rational\\rational.cpp",
   "output": "CMakeFiles\\a_rational.dir\\rational.cpp.obj"

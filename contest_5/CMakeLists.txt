@@ -6,6 +6,7 @@ enable_testing()
 
 add_executable(contest_5
 	IShape.cpp
+	segment.cpp
 	ray.cpp
 	line.cpp
 	point.cpp

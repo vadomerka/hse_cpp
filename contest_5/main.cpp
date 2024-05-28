@@ -5,16 +5,16 @@
 #include "vector.h"
 #include "point.h"
 #include "segment.h"
-// #include "ray.h"
-// #include "line.h"
+#include "ray.h"
+#include "line.h"
 // #include "circle.h"
 // #include "polygon.h"
 
 #include "vector.h"   // check include guards
 #include "point.h"    // check include guards
 #include "segment.h"  // check include guards
-// #include "ray.h"      // check include guards
-// #include "line.h"     // check include guards
+#include "ray.h"      // check include guards
+#include "line.h"     // check include guards
 // #include "circle.h"   // check include guards
 // #include "polygon.h"  // check include guards
 
@@ -93,12 +93,12 @@ int main() {
 
   CheckFunctions(shape_ptr.get(), point_a, point_b);
   */
-  
-  // geometry::Point p1(1, 0);
-  // geometry::Point p2(3, 0);
-  geometry::Vector v(0, 1);
-  geometry::Vector v1 (0, 1);
-  v1 *= 2;
-  std::cout << v.ToString() << " " << v1.ToString() << " " << geometry::Vector::IsColliniar(v1, v);
+  geometry::Point p1{0, 0};
+  geometry::Point p2{1, 1};
+  geometry::Point p3{3, 3};
+  geometry::Vector v1{p1, p3};
+  geometry::Segment s1(p1, p3);
+  std::cout << s1.ToString() << " " << s1.ContainsPoint(p2);
+  // std::cout << l1.ToString();
   return 0;
 }

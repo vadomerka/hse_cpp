@@ -34,14 +34,14 @@ public:
 
 public:
   void Move(const Vector& v) override;
-  bool ContainsPoint(const Point& p) override { 
+  bool ContainsPoint(const Point& p) const override { 
     return *this == p;
   }
-  bool CrossesSegment(const Segment& segment) override;
-  Point* Clone() override {
+  bool CrossesSegment(const Segment& segment) const override;
+  Point* Clone() const override {
     return new Point(*this);
   }
-  std::string ToString() override {
+  std::string ToString() const override {
     std::string vars[] { std::to_string(x_), std::to_string(y_) };
     return StringFormat("Point", vars, 2);
   }
@@ -61,6 +61,7 @@ public:
   int GetY() const {
     return y_;
   }
+  static double Distance(const Point& p1, const Point& p2);
 
 private:
   void Swap(Point& p1, Point& p2) {

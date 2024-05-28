@@ -58,11 +58,19 @@ public:
 #pragma endregion
 
 public:
-  static bool IsColliniar(const Vector &v1, const Vector &v2) {
+  static bool AreColliniar(const Vector &v1, const Vector &v2) {
     return !Cross(v1, v2);
   }
 
-  static bool IsPerpendicular(const Vector &v1, const Vector &v2) {
+  static bool AreCoDirected(const Vector &v1, const Vector &v2) {
+    return AreColliniar(v1, v2) && v1.a_ * v2.a_ >= 0 && v1.b_ * v2.b_ >= 0;
+  }
+
+  static bool AreOpDirected(const Vector &v1, const Vector &v2) {
+    return AreColliniar(v1, v2) && v1.a_ * v2.a_ < 0 && v1.b_ * v2.b_ < 0;
+  }
+
+  static bool ArePerpendicular(const Vector &v1, const Vector &v2) {
     return !Scalar(v1, v2);
   }
 
@@ -77,8 +85,8 @@ public:
 public:
   int GetA() const { return a_; }
   int GetB() const { return b_; }
-  double GetLenngth() const { return sqrt(a_ * a_ + b_ * b_); }
-  std::string ToString() {
+  double GetLength() const { return sqrt(a_ * a_ + b_ * b_); }
+  std::string ToString() const {
     std::string vars[]{std::to_string(a_), std::to_string(b_)};
     return StringFormat("Vector", vars, 2);
   }
@@ -91,7 +99,7 @@ private:
 
 protected:
   std::string StringFormat(std::string class_name, std::string args[],
-                           size_t length);
+                           size_t length) const;
 
 private:
   int a_;
