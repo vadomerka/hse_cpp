@@ -1,14 +1,11 @@
 # ninja log v5
-8	231	7385416946506462	CMakeFiles/contest_5.dir/vector.cpp.obj	9672b9c6257af671
-4	242	7385416946616478	CMakeFiles/contest_5.dir/point.cpp.obj	9bf91bee8c8ae2bd
-365	477	7385416948903609	contest_5.exe	6028d2450c8e848c
-12	365	7385416947850682	CMakeFiles/contest_5.dir/main.cpp.obj	8f29fb961807d9d8
-10	379	7385420098812518	build.ninja	77d82c1433ad8dd9
-21	253	7385420102080402	CMakeFiles/contest_5.dir/vector.cpp.obj	9672b9c6257af671
-18	281	7385420102366519	CMakeFiles/contest_5.dir/point.cpp.obj	9bf91bee8c8ae2bd
-25	399	7385420103547754	CMakeFiles/contest_5.dir/main.cpp.obj	8f29fb961807d9d8
-13	260	7385420396812212	CMakeFiles/contest_5.dir/IShape.cpp.obj	9c054699a138d555
-18	269	7385420396902212	CMakeFiles/contest_5.dir/point.cpp.obj	9bf91bee8c8ae2bd
-21	270	7385420396922206	CMakeFiles/contest_5.dir/vector.cpp.obj	9672b9c6257af671
-25	410	7385420398324133	CMakeFiles/contest_5.dir/main.cpp.obj	8f29fb961807d9d8
-410	518	7385420399360229	contest_5.exe	50a27e295f460ecb
+13	339	7385943295394838	CMakeFiles/contest_5.dir/IShape.cpp.obj	9c054699a138d555
+10	366	7385948438055982	build.ninja	77d82c1433ad8dd9
+30	478	7385943296790306	CMakeFiles/contest_5.dir/main.cpp.obj	8f29fb961807d9d8
+8	288	7385947971987155	CMakeFiles/contest_5.dir/ray.cpp.obj	8d923624df7c29e3
+20	364	7385943295639774	CMakeFiles/contest_5.dir/line.cpp.obj	648d5c6f16fff130
+288	414	7385947973196866	contest_5.exe	5c8d773e197f0fb1
+23	352	7385943295509787	CMakeFiles/contest_5.dir/point.cpp.obj	9bf91bee8c8ae2bd
+26	341	7385943295414838	CMakeFiles/contest_5.dir/vector.cpp.obj	9672b9c6257af671
+13	260	7385948462485915	CMakeFiles/contest_5.dir/ray.cpp.obj	8d923624df7c29e3
+261	385	7385948463698595	contest_5.exe	5c8d773e197f0fb1

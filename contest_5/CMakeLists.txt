@@ -6,6 +6,8 @@ enable_testing()
 
 add_executable(contest_5
 	IShape.cpp
+	ray.cpp
+	line.cpp
 	point.cpp
 	vector.cpp
 	main.cpp

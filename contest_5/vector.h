@@ -2,6 +2,7 @@
 #define A_VECTOR_H
 
 #include "point.h"
+#include <cmath>
 
 namespace geometry {
 
@@ -11,10 +12,8 @@ public:
 
   Vector(int x, int y) : a_(x), b_(y) {}
 
-  Vector(const Point& p1, const Point& p2) 
-  : a_{p2.GetX() - p1.GetX()} 
-  , b_{p2.GetY() - p1.GetY()}
-  {}
+  Vector(const Point &p1, const Point &p2)
+      : a_{p2.GetX() - p1.GetX()}, b_{p2.GetY() - p1.GetY()} {}
 
   Vector(const Vector &other) : a_(other.a_), b_(other.b_) {}
 
@@ -32,9 +31,9 @@ public:
 #pragma region operators
 
 public:
-  bool operator==(const Vector& other);
+  bool operator==(const Vector &other);
 
-  bool operator!=(const Vector& other) { return !(*this == other); }
+  bool operator!=(const Vector &other) { return !(*this == other); }
 
   Vector &operator*=(int lambda);
 
@@ -59,10 +58,28 @@ public:
 #pragma endregion
 
 public:
+  static bool IsColliniar(const Vector &v1, const Vector &v2) {
+    return !Cross(v1, v2);
+  }
+
+  static bool IsPerpendicular(const Vector &v1, const Vector &v2) {
+    return !Scalar(v1, v2);
+  }
+
+  static int Scalar(const Vector &v1, const Vector &v2) {
+    return v1.a_ * v2.a_ + v1.b_ * v2.b_;
+  }
+
+  static int Cross(const Vector &v1, const Vector &v2) {
+    return v1.a_ * v2.b_ - v1.b_ * v2.a_;
+  }
+
+public:
   int GetA() const { return a_; }
   int GetB() const { return b_; }
-  std::string ToString() { 
-    std::string vars[] { std::to_string(a_), std::to_string(b_) };
+  double GetLenngth() const { return sqrt(a_ * a_ + b_ * b_); }
+  std::string ToString() {
+    std::string vars[]{std::to_string(a_), std::to_string(b_)};
     return StringFormat("Vector", vars, 2);
   }
 
@@ -73,7 +90,8 @@ private:
   }
 
 protected:
-  std::string StringFormat(std::string class_name, std::string args[], size_t length);
+  std::string StringFormat(std::string class_name, std::string args[],
+                           size_t length);
 
 private:
   int a_;

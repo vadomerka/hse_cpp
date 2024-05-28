@@ -37,9 +37,7 @@ public:
   bool ContainsPoint(const Point& p) override { 
     return *this == p;
   }
-  bool CrossesSegment(const Segment &) override {
-    return true;
-  }
+  bool CrossesSegment(const Segment& segment) override;
   Point* Clone() override {
     return new Point(*this);
   }

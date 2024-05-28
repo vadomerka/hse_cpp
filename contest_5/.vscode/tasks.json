@@ -10,6 +10,8 @@
                 "${workspaceFolder}\\main.cpp",
                 "${workspaceFolder}\\vector.cpp",
                 "${workspaceFolder}\\point.cpp",
+                "${workspaceFolder}\\line.cpp",
+                "${workspaceFolder}\\ray.cpp",
                 "${workspaceFolder}\\IShape.cpp",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"

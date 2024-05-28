@@ -21,6 +21,9 @@ namespace geometry {
 class Vector;
 class Point;
 class Segment;
+class Ray;
+class Line;
+class Polygon;
 
 class IShape {
 public:
@@ -32,6 +35,8 @@ public:
 
 protected:
   std::string StringFormat(std::string class_name, std::string args[], size_t length);
+
+  bool IsMult(int n1, int n2);
 };
 
 } // namespace geometry

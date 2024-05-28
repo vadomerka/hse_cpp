@@ -94,9 +94,11 @@ int main() {
   CheckFunctions(shape_ptr.get(), point_a, point_b);
   */
   
-  geometry::Point p1(1, 1);
-  geometry::Point p2(3, 2);
-  geometry::Vector v(p1, p2);
-  std::cout << v.ToString();
+  // geometry::Point p1(1, 0);
+  // geometry::Point p2(3, 0);
+  geometry::Vector v(0, 1);
+  geometry::Vector v1 (0, 1);
+  v1 *= 2;
+  std::cout << v.ToString() << " " << v1.ToString() << " " << geometry::Vector::IsColliniar(v1, v);
   return 0;
 }
