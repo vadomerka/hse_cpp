@@ -5,12 +5,14 @@ include(CTest)
 enable_testing()
 
 add_executable(contest_5
-	IShape.cpp
-	segment.cpp
-	ray.cpp
-	line.cpp
-	point.cpp
-	vector.cpp
+	src/IShape.cpp
+	src/segment.cpp
+	src/ray.cpp
+	src/line.cpp
+	src/point.cpp
+	src/vector.cpp
+	src/polygon.cpp
+	src/circle.cpp
 	main.cpp
 )
 

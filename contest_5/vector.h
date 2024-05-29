@@ -7,15 +7,17 @@
 namespace geometry {
 
 class Vector {
-public:
-  Vector() : a_(0), b_(0) {}
+ public:
+  Vector() : a_(0), b_(0) {
+  }
 
-  Vector(int x, int y) : a_(x), b_(y) {}
+  Vector(int x, int y) : a_(x), b_(y) {
+  }
 
-  Vector(const Point &p1, const Point &p2)
-      : a_{p2.GetX() - p1.GetX()}, b_{p2.GetY() - p1.GetY()} {}
+  Vector(const Point &p1, const Point &p2) : a_{p2.GetX() - p1.GetX()}, b_{p2.GetY() - p1.GetY()} {
+  }
 
-  Vector(const Vector &other) : a_(other.a_), b_(other.b_) {}
+  Vector(const Vector &other) = default;
 
   ~Vector() = default;
 
@@ -28,12 +30,12 @@ public:
     return *this;
   }
 
-#pragma region operators
-
-public:
+ public:
   bool operator==(const Vector &other);
 
-  bool operator!=(const Vector &other) { return !(*this == other); }
+  bool operator!=(const Vector &other) {
+    return !(*this == other);
+  }
 
   Vector &operator*=(int lambda);
 
@@ -43,21 +45,31 @@ public:
 
   Vector &operator-=(const Vector &other);
 
-  Vector operator*(int lambda) const { return Vector(*this) *= lambda; }
+  Vector operator*(int lambda) const {
+    return Vector(*this) *= lambda;
+  }
 
-  Vector operator/(int lambda) const { return Vector(*this) /= lambda; }
+  Vector operator/(int lambda) const {
+    return Vector(*this) /= lambda;
+  }
 
-  Vector operator+(const Vector &other) const { return Vector(*this) += other; }
+  Vector operator+(const Vector &other) const {
+    return Vector(*this) += other;
+  }
 
-  Vector operator-(const Vector &other) const { return Vector(*this) -= other; }
+  Vector operator-(const Vector &other) const {
+    return Vector(*this) -= other;
+  }
 
-  Vector operator+() const { return (*this); }
+  Vector operator+() const {
+    return (*this);
+  }
 
-  Vector operator-() const { return {-a_, -b_}; }
+  Vector operator-() const {
+    return {-a_, -b_};
+  }
 
-#pragma endregion
-
-public:
+ public:
   static bool AreColliniar(const Vector &v1, const Vector &v2) {
     return !Cross(v1, v2);
   }
@@ -82,29 +94,38 @@ public:
     return v1.a_ * v2.b_ - v1.b_ * v2.a_;
   }
 
-public:
-  int GetA() const { return a_; }
-  int GetB() const { return b_; }
-  double GetLength() const { return sqrt(a_ * a_ + b_ * b_); }
+ public:
+  int GetA() const {
+    return a_;
+  }
+  int GetB() const {
+    return b_;
+  }
+  void Set(const Point &p1, const Point &p2) {
+    a_ = p2.GetX() - p1.GetX();
+    b_ = p2.GetY() - p1.GetY();
+  }
+  double GetLength() const {
+    return sqrt(a_ * a_ + b_ * b_);
+  }
   std::string ToString() const {
     std::string vars[]{std::to_string(a_), std::to_string(b_)};
     return StringFormat("Vector", vars, 2);
   }
 
-private:
+ private:
   void Swap(Vector &v1, Vector &v2) {
     std::swap(v1.a_, v2.a_);
     std::swap(v1.b_, v2.b_);
   }
 
-protected:
-  std::string StringFormat(std::string class_name, std::string args[],
-                           size_t length) const;
+ protected:
+  std::string StringFormat(std::string class_name, std::string args[], size_t length) const;
 
-private:
+ private:
   int a_;
   int b_;
 };
 
-} // namespace geometry
+}  // namespace geometry
 #endif

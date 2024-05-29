@@ -7,16 +7,16 @@
 #include "segment.h"
 #include "ray.h"
 #include "line.h"
-// #include "circle.h"
-// #include "polygon.h"
+#include "circle.h"
+#include "polygon.h"
 
 #include "vector.h"   // check include guards
 #include "point.h"    // check include guards
 #include "segment.h"  // check include guards
 #include "ray.h"      // check include guards
 #include "line.h"     // check include guards
-// #include "circle.h"   // check include guards
-// #include "polygon.h"  // check include guards
+#include "circle.h"   // check include guards
+#include "polygon.h"  // check include guards
 
 template <class SmartPtrT>
 void Delete(const SmartPtrT&) {
@@ -26,7 +26,7 @@ template <class T>
 void Delete(T* ptr) {
   delete ptr;
 }
-/*
+
 void CheckFunctions(const geometry::IShape* shape_ptr, const geometry::Point& point_a, const geometry::Point& point_b) {
   std::cout << "Given shape " << (shape_ptr->ContainsPoint(point_a) ? "contains" : "does not contain") << " point A\n";
 
@@ -40,10 +40,10 @@ void CheckFunctions(const geometry::IShape* shape_ptr, const geometry::Point& po
 
   Delete(cloned_shape_ptr);  // raw pointer compatibility
 }
-*/
+
 int main() {
-  /*
-  std::unique_ptr<geometry::IShape> shape_ptr;
+  
+  geometry::IShape* shape_ptr;
 
   std::string command;
   std::cin >> command;
@@ -55,16 +55,16 @@ int main() {
   
   if (command == "point") {
     std::cin >> x >> y;
-    shape_ptr = std::make_unique<geometry::Point>(x, y);
+    shape_ptr = new geometry::Point(x, y);
   } else if (command == "segment") {
     std::cin >> x >> y >> a >> b;
-    shape_ptr = std::make_unique<geometry::Segment>(geometry::Point(x, y), geometry::Point(a, b));
+    shape_ptr = new geometry::Segment(geometry::Point(x, y), geometry::Point(a, b));
   } else if (command == "ray") {
     std::cin >> x >> y >> a >> b;
-    shape_ptr = std::make_unique<geometry::Ray>(geometry::Point(x, y), geometry::Point(a, b));
+    shape_ptr = new geometry::Ray(geometry::Point(x, y), geometry::Point(a, b));
   } else if (command == "line") {
     std::cin >> x >> y >> a >> b;
-    shape_ptr = std::make_unique<geometry::Line>(geometry::Point(x, y), geometry::Point(a, b));
+    shape_ptr = new geometry::Line(geometry::Point(x, y), geometry::Point(a, b));
   } else if (command == "polygon") {
     size_t n_points = 0;
     std::cin >> n_points;
@@ -74,13 +74,13 @@ int main() {
       std::cin >> x >> y;
       points.emplace_back(x, y);
     }
-    shape_ptr = std::make_unique<geometry::Polygon>(std::move(points));
+    shape_ptr = new geometry::Polygon(std::move(points));
   } else if (command == "circle") {
     std::cin >> x >> y;
     const auto center = geometry::Point(x, y);
     uint32_t radius = 0;
     std::cin >> radius;
-    shape_ptr = std::make_unique<geometry::Circle>(center, radius);
+    shape_ptr = new geometry::Circle(center, radius);
   } else {
     std::cerr << "Undefined command" << std::endl;
     return 1;
@@ -90,15 +90,7 @@ int main() {
   const auto point_a = geometry::Point(x, y);
   std::cin >> x >> y;
   const auto point_b = geometry::Point(x, y);
-
-  CheckFunctions(shape_ptr.get(), point_a, point_b);
-  */
-  geometry::Point p1{0, 0};
-  geometry::Point p2{1, 1};
-  geometry::Point p3{3, 3};
-  geometry::Vector v1{p1, p3};
-  geometry::Segment s1(p1, p3);
-  std::cout << s1.ToString() << " " << s1.ContainsPoint(p2);
-  // std::cout << l1.ToString();
+  const geometry::IShape* const_ptr = shape_ptr;
+  CheckFunctions(const_ptr, point_a, point_b);
   return 0;
 }

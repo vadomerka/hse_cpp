@@ -11,9 +11,6 @@
   представление фигуры (формат см. в примерах).
 */
 
-// #include "point.h"
-// #include "segment.h"
-// #include "vector.h"
 #include <string>
 
 namespace geometry {
@@ -23,22 +20,34 @@ class Point;
 class Segment;
 class Ray;
 class Line;
-class Polygon;
+class Circle;
 
 class IShape {
-public:
-  virtual void Move(const Vector &) = 0;
+ public:
+  virtual ~IShape() = default;
+
+ public:
+  virtual IShape &Move(const Vector &) = 0;
   virtual bool ContainsPoint(const Point &) const = 0;
   virtual bool CrossesSegment(const Segment &) const = 0;
-  virtual IShape* Clone() const = 0;
+  virtual IShape *Clone() const = 0;
   virtual std::string ToString() const = 0;
 
-protected:
+ protected:
   std::string StringFormat(std::string class_name, std::string args[], size_t length) const;
 
   bool IsMult(int n1, int n2);
+  int Sign(int num) const {
+    if (num > 0) {
+      return 1;
+    }
+    if (num == 0) {
+      return 0;
+    }
+    return -1;
+  }
 };
 
-} // namespace geometry
+}  // namespace geometry
 
 #endif
