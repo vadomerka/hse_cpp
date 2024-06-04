@@ -217,12 +217,6 @@ build ContinuousSubmit: phony CMakeFiles/ContinuousSubmit
 
 build cmake_object_order_depends_target_a_rational: phony || CMakeFiles/a_rational.dir
 
-build CMakeFiles/a_rational.dir/rational_exceptions.cpp.obj: CXX_COMPILER__a_rational_unscanned_Debug C$:/projects/hse/cpp/contest_4/a_rational/rational_exceptions.cpp || cmake_object_order_depends_target_a_rational
-  DEP_FILE = CMakeFiles\a_rational.dir\rational_exceptions.cpp.obj.d
-  FLAGS = -g
-  OBJECT_DIR = CMakeFiles\a_rational.dir
-  OBJECT_FILE_DIR = CMakeFiles\a_rational.dir
-
 build CMakeFiles/a_rational.dir/rational.cpp.obj: CXX_COMPILER__a_rational_unscanned_Debug C$:/projects/hse/cpp/contest_4/a_rational/rational.cpp || cmake_object_order_depends_target_a_rational
   DEP_FILE = CMakeFiles\a_rational.dir\rational.cpp.obj.d
   FLAGS = -g
@@ -243,7 +237,7 @@ build CMakeFiles/a_rational.dir/main.cpp.obj: CXX_COMPILER__a_rational_unscanned
 #############################################
 # Link the executable a_rational.exe
 
-build a_rational.exe: CXX_EXECUTABLE_LINKER__a_rational_Debug CMakeFiles/a_rational.dir/rational_exceptions.cpp.obj CMakeFiles/a_rational.dir/rational.cpp.obj CMakeFiles/a_rational.dir/main.cpp.obj
+build a_rational.exe: CXX_EXECUTABLE_LINKER__a_rational_Debug CMakeFiles/a_rational.dir/rational.cpp.obj CMakeFiles/a_rational.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\a_rational.dir

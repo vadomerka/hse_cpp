@@ -1,30 +1,7 @@
-
-/*
-Необходимо реализовать класс для работы с рациональными числами Rational.
-
-Рациональное число представляется двумя взаимно простыми целыми числами -
-числителем и положительным знаменателем. Этот инвариант необходимо поддерживать
-при выполнении любых операций над объектами класса Rational. Публичный интерфейс
-класса должен включать:
-
-- Конструктор по умолчанию, который инициализирует число нулем;
-- Неявный конструктор преобразования от целых чисел (должен работать следующий код
-Rational x = 5;). Не забудьте добавить комментарий // NOLINT (см. замечания);
-- Конструктор от двух целых чисел (числитель и знаменатель). При этом не
-гарантируется, что числа взаимно простые и ненулевые (об этом далее); 
-- Методы GetNumerator() и GetDenominator(), возвращающие числитель и знаменатель
-соответственно; 
-- Методы SetNumerator(int) и SetDenominator(int), устанавливающие числитель и знаменатель в требуемые значения; 
-- Бинарные арифметические операции (+, -, /, *) и их присваивающие версии (+=, -=, /=, *=); 
-- Унарные операции (+, -), а также префиксные и постфиксные инкременты и декременты (++, --); 
-- Операции сравнения; Операции ввода из потока и вывода в поток (>>, <<);
-*/
-
 #include <cassert>
 #include <iostream>
 
 #include "rational.h"
-#include "rational_exceptions.h"
 
 void test01() { 
   Rational r;
@@ -66,6 +43,47 @@ void test07() {
   assert(check1 && check2);
 }
 
+void test08() {
+  bool check = false;
+  try {
+    Rational r(1, 0);
+  } catch(const RationalDivisionByZero&) {
+    check = true;
+  }
+  assert(check);
+}
+
+void test09() {
+  Rational r(1, -2);
+  assert(r.GetNumerator() == -1 && r.GetDenominator() == 2);
+}
+
+void test10() {
+  const Rational r1(1, -2);
+  const Rational r2(4, 5);
+  Rational res = r1 * r2;
+  assert(res.GetNumerator() == -2 && res.GetDenominator() == 5);
+}
+
+void test11() {
+  Rational r1(1, -2);
+  assert((r1++).GetNumerator() == 1 && r1.GetDenominator() == 2 && 
+         (r1--).GetNumerator() == -1 && r1.GetDenominator() == 2);
+}
+
+void test12() {
+  Rational r1(1, -2);
+  assert((++r1).GetNumerator() == 1 && r1.GetDenominator() == 2 && 
+         (--r1).GetNumerator() == -1 && r1.GetDenominator() == 2);
+}
+
+void test13() {
+  Rational r1(1, 2);
+  std::cout << r1 << '\n';
+  std::cin >> r1;
+  std::cout << r1 << '\n';
+}
+
 void RunTests() {
   test01();
   test02();
@@ -74,11 +92,16 @@ void RunTests() {
   test05();
   test06();
   test07();
+  test08();
+  test09();
+  test10();
+  test11();
+  test12();
+  test13();
   std::cout << "All tests passed";
 }
 
 int main() {
   RunTests();
-  throw TestClass("my message");
   return 0;
 }

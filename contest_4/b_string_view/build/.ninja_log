@@ -1,0 +1,6 @@
+# ninja log v5
+2	273	7378377908669189	CMakeFiles/b_string_view.dir/string_view.cpp.obj	fc20b8af28c41955
+5	327	7378377909202817	CMakeFiles/b_string_view.dir/main.cpp.obj	828f5f8900ad345
+327	436	7378377910264936	b_string_view.exe	bddce2feb5ea4be
+4	230	7378378965278881	CMakeFiles/b_string_view.dir/string_view.cpp.obj	fc20b8af28c41955
+230	319	7378378966134668	b_string_view.exe	bddce2feb5ea4be

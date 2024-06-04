@@ -1,0 +1,56 @@
+[
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\src\\IShape.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\src\\IShape.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\src\\IShape.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\src\\IShape.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\src\\segment.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\src\\segment.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\src\\segment.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\src\\segment.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\src\\ray.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\src\\ray.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\src\\ray.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\src\\ray.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\src\\line.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\src\\line.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\src\\line.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\src\\line.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\src\\point.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\src\\point.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\src\\point.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\src\\point.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\src\\vector.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\src\\vector.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\src\\vector.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\src\\vector.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\src\\polygon.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\src\\polygon.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\src\\polygon.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\src\\polygon.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\src\\circle.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\src\\circle.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\src\\circle.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\src\\circle.cpp.obj"
+},
+{
+  "directory": "C:/projects/hse/cpp/contest_5/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -o CMakeFiles\\contest_5.dir\\main.cpp.obj -c C:\\projects\\hse\\cpp\\contest_5\\main.cpp",
+  "file": "C:\\projects\\hse\\cpp\\contest_5\\main.cpp",
+  "output": "CMakeFiles\\contest_5.dir\\main.cpp.obj"
+}
+]

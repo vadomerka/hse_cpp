@@ -5,7 +5,6 @@ include(CTest)
 enable_testing()
 
 add_executable(a_rational
-    rational_exceptions.cpp
 	rational.cpp
 	main.cpp
 )
