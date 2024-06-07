@@ -1,62 +1,69 @@
 #ifndef MY_UNIQUE_PTR_H
 #define MY_UNIQUE_PTR_H
 
-/*
-Детали реализации
-
-Шаблонный класс должен поддерживать:
-
-    Конструктор по умолчанию (создает нулевой указатель).
-
-    Конструктор от указателя (сохраняет указатель на объект).
-
-    Конструктор копирования и копирующее присваивание должны отсутствовать.
-
-    Перемещающий конструктор и перемещающее присваивание должны передавать владение объектом.
-
-    Метод Release(), который отлучает класс от владения текущим ресурсом и возвращает указатель на него.
-
-    Метод Reset(T* ptr = nullptr), меняет указатель, которым владеет объект (старый ресурс удаляется).
-
-    Метод Swap(UniquePtr&).
-
-    Метод Get(), возвращающий указатель на объект.
-
-    Оператор разыменовывания operator*.
-
-    Оператор "стрелочка" operator->.
-
-    Явный оператор приведения к bool (operator bool).
-
-*/
-
-#include <memory>
-
-
-template<class T> class UniquePtr {
+template <class T>
+class UniquePtr {
  public:
   UniquePtr() : pointer_(nullptr) {
   }
 
-  UniquePtr(T* pointer) : pointer_(pointer) {
+  explicit UniquePtr(T* pointer) : pointer_(pointer) {
   }
 
-  UniquePtr(UniquePtr&&<T> up) noexcept : pointer_{ up.pointer_ } {
-    up.data = nullptr;
+  UniquePtr(const UniquePtr<T>&) = delete;
+  UniquePtr& operator=(const UniquePtr<T>& u) = delete;
+
+  UniquePtr(UniquePtr&& up) noexcept : pointer_{up.pointer_} {
+    up.pointer_ = nullptr;
   }
 
-  UniquePtr& operator=(UniquePtr&&<T> up) noexcept {
+  UniquePtr& operator=(UniquePtr&& up) noexcept {
     if (this == &up) {
       return *this;
     }
 
+    delete pointer_;
     pointer_ = up.pointer_;
     up.pointer_ = nullptr;
     return *this;
   }
 
-  
+  ~UniquePtr() {
+    delete pointer_;
+  }
 
+ public:
+  T* Release() {
+    T* tmp_pointer = pointer_;
+    pointer_ = nullptr;
+    return tmp_pointer;
+  }
+
+  void Reset(T* ptr = nullptr) {
+    delete pointer_;
+    pointer_ = ptr;
+  }
+
+  void Swap(UniquePtr& up) {
+    std::swap(pointer_, up.pointer_);
+  }
+
+ public:
+  T* Get() const {
+    return pointer_;
+  }
+
+  T& operator*() const {
+    return *pointer_;
+  }
+
+  T* operator->() const {
+    return pointer_;
+  }
+
+  explicit operator bool() const {
+    return pointer_;
+  }
 
  private:
   T* pointer_;
