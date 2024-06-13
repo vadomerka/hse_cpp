@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\projects\hse\cpp\bdz\hijk\out\build\bzd_hijk\CMakeFiles\16c8dadf9471446dd2979b4b37c302ed\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5A70D31C-0A8D-3B8B-8C93-80413A2A2013}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
