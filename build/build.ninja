@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: project3
+# Project: main_tests
 # Configurations: Debug
 # =============================================================================
 
@@ -209,37 +209,37 @@ build ContinuousMemCheck: phony CMakeFiles/ContinuousMemCheck
 build ContinuousSubmit: phony CMakeFiles/ContinuousSubmit
 
 # =============================================================================
-# Object build statements for EXECUTABLE target project3
+# Object build statements for EXECUTABLE target main_tests
 
 
 #############################################
-# Order-only phony target for project3
+# Order-only phony target for main_tests
 
-build cmake_object_order_depends_target_project3: phony || CMakeFiles/project3.dir
+build cmake_object_order_depends_target_main_tests: phony || CMakeFiles/main_tests.dir
 
-build CMakeFiles/project3.dir/main.cpp.obj: CXX_COMPILER__project3_unscanned_Debug C$:/projects/hse/cpp/main.cpp || cmake_object_order_depends_target_project3
-  DEP_FILE = CMakeFiles\project3.dir\main.cpp.obj.d
+build CMakeFiles/main_tests.dir/main.cpp.obj: CXX_COMPILER__main_tests_unscanned_Debug C$:/projects/hse/cpp/main.cpp || cmake_object_order_depends_target_main_tests
+  DEP_FILE = CMakeFiles\main_tests.dir\main.cpp.obj.d
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles\project3.dir
-  OBJECT_FILE_DIR = CMakeFiles\project3.dir
+  OBJECT_DIR = CMakeFiles\main_tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\main_tests.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target project3
+# Link build statements for EXECUTABLE target main_tests
 
 
 #############################################
-# Link the executable project3.exe
+# Link the executable main_tests.exe
 
-build project3.exe: CXX_EXECUTABLE_LINKER__project3_Debug CMakeFiles/project3.dir/main.cpp.obj
+build main_tests.exe: CXX_EXECUTABLE_LINKER__main_tests_Debug CMakeFiles/main_tests.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\project3.dir
+  OBJECT_DIR = CMakeFiles\main_tests.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = project3.exe
-  TARGET_IMPLIB = libproject3.dll.a
-  TARGET_PDB = project3.exe.dbg
+  TARGET_FILE = main_tests.exe
+  TARGET_IMPLIB = libmain_tests.dll.a
+  TARGET_PDB = main_tests.exe.dbg
 
 
 #############################################
@@ -527,7 +527,7 @@ build CMakeFiles/ContinuousSubmit | ${cmake_ninja_workdir}CMakeFiles/ContinuousS
 # =============================================================================
 # Target aliases.
 
-build project3: phony project3.exe
+build main_tests: phony main_tests.exe
 
 # =============================================================================
 # Folder targets.
@@ -537,7 +537,7 @@ build project3: phony project3.exe
 #############################################
 # Folder: C:/projects/hse/cpp/build
 
-build all: phony project3.exe
+build all: phony main_tests.exe
 
 # =============================================================================
 # Unknown Build Time Dependencies.

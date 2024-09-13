@@ -26,7 +26,7 @@ C:/projects/hse/cpp/build/CMakeFiles/ContinuousTest.dir
 C:/projects/hse/cpp/build/CMakeFiles/ContinuousCoverage.dir
 C:/projects/hse/cpp/build/CMakeFiles/ContinuousMemCheck.dir
 C:/projects/hse/cpp/build/CMakeFiles/ContinuousSubmit.dir
-C:/projects/hse/cpp/build/CMakeFiles/project3.dir
+C:/projects/hse/cpp/build/CMakeFiles/main_tests.dir
 C:/projects/hse/cpp/build/CMakeFiles/package.dir
 C:/projects/hse/cpp/build/CMakeFiles/package_source.dir
 C:/projects/hse/cpp/build/CMakeFiles/test.dir
