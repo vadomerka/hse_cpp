@@ -1,8 +1,8 @@
 [
 {
-  "directory": "C:/projects/hse/cpp/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\project3.dir\\main.cpp.obj -c C:\\projects\\hse\\cpp\\main.cpp",
-  "file": "C:\\projects\\hse\\cpp\\main.cpp",
-  "output": "CMakeFiles\\project3.dir\\main.cpp.obj"
+  "directory": "/home/rad/studying/hse/cpp/build",
+  "command": "/usr/bin/g++-7   -g -o CMakeFiles/mainprj.dir/main.cpp.o -c /home/rad/studying/hse/cpp/main.cpp",
+  "file": "/home/rad/studying/hse/cpp/main.cpp",
+  "output": "CMakeFiles/mainprj.dir/main.cpp.o"
 }
 ]
