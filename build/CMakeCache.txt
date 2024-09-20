@@ -14,6 +14,8 @@
 # EXTERNAL cache entries
 ########################
 
+:UNINITIALIZED=======
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -146,8 +148,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
-//Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=mainprj
+CMAKE_PROJECT_NAME:STATIC=main_tests
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1.0
@@ -229,7 +230,14 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+main_tests_BINARY_DIR:STATIC=C:/projects/hse/cpp/build
+
 //Value Computed by CMake
+main_tests_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+main_tests_SOURCE_DIR:STATIC=C:/projects/hse/cpp
+
 mainprj_BINARY_DIR:STATIC=/home/rad/studying/hse/cpp/build
 
 //Value Computed by CMake
@@ -237,6 +245,9 @@ mainprj_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 mainprj_SOURCE_DIR:STATIC=/home/rad/studying/hse/cpp
+
+//Value Computed by CMake
+project3_BINARY_DIR:STATIC=C:/projects/hse/cpp/build
 
 
 ########################

@@ -1,0 +1,10 @@
+^C:\PROJECTS\HSE\CPP\BDZ\HIJK\OUT\BUILD\BZD_HIJK\CMAKEFILES\16C8DADF9471446DD2979B4B37C302ED\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/projects/hse/cpp/bdz/hijk -BC:/projects/hse/cpp/bdz/hijk/out/build/bzd_hijk --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/projects/hse/cpp/bdz/hijk/out/build/bzd_hijk/bzd_hijk.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,8 +1,15 @@
 [
 {
+<<<<<<< HEAD
   "directory": "/home/rad/studying/hse/cpp/build",
   "command": "/usr/bin/g++-7   -g -o CMakeFiles/mainprj.dir/main.cpp.o -c /home/rad/studying/hse/cpp/main.cpp",
   "file": "/home/rad/studying/hse/cpp/main.cpp",
   "output": "CMakeFiles/mainprj.dir/main.cpp.o"
+=======
+  "directory": "C:/projects/hse/cpp/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\main_tests.dir\\main.cpp.obj -c C:\\projects\\hse\\cpp\\main.cpp",
+  "file": "C:\\projects\\hse\\cpp\\main.cpp",
+  "output": "CMakeFiles\\main_tests.dir\\main.cpp.obj"
+>>>>>>> 1b7b029e89e72998979dedfa7b1b241b1a1d07e6
 }
 ]
