@@ -1,0 +1,3 @@
+/home/rad/studying/hse/cpp/kolloqium/out/build/kolloqium/CMakeFiles/kolloqium.dir
+/home/rad/studying/hse/cpp/kolloqium/out/build/kolloqium/CMakeFiles/edit_cache.dir
+/home/rad/studying/hse/cpp/kolloqium/out/build/kolloqium/CMakeFiles/rebuild_cache.dir

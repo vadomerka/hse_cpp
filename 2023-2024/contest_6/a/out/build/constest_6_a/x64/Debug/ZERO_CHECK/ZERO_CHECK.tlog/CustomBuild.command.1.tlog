@@ -1,0 +1,10 @@
+^C:\PROJECTS\HSE\CPP\CONTEST_6\A\OUT\BUILD\CONSTEST_6_A\CMAKEFILES\FC5185397AE3ADFA30B68A7676674B68\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/projects/hse/cpp/contest_6/a -BC:/projects/hse/cpp/contest_6/a/out/build/constest_6_a --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/projects/hse/cpp/contest_6/a/out/build/constest_6_a/contest_6_a.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

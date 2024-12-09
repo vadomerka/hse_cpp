@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/projects/hse/cpp/2024-2025/algosy/build",
+  "command": "C:\\msys64\\mingw32\\bin\\g++.exe -g -std=gnu++20 -o CMakeFiles\\algosis.dir\\main.cpp.obj -c C:\\projects\\hse\\cpp\\2024-2025\\algosy\\main.cpp",
+  "file": "C:\\projects\\hse\\cpp\\2024-2025\\algosy\\main.cpp",
+  "output": "CMakeFiles\\algosis.dir\\main.cpp.obj"
+}
+]

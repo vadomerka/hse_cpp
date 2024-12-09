@@ -1,0 +1,10 @@
+^C:\PROJECTS\HSE\CPP\CONTEST_6\A\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/projects/hse/cpp/contest_6/a -BC:/projects/hse/cpp/contest_6/a/out/build/constest_6_a --check-stamp-file C:/projects/hse/cpp/contest_6/a/out/build/constest_6_a/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,10 @@
+^C:\PROJECTS\HSE\CPP\CONTEST_7\OUT\BUILD\GCC 5.4.0 AVR\CMAKEFILES\33CEAFDD2BDED03FC0270EBF21911349\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/projects/hse/cpp/contest_7 "-BC:/projects/hse/cpp/contest_7/out/build/GCC 5.4.0 avr" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/projects/hse/cpp/contest_7/out/build/GCC 5.4.0 avr/contest_7.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

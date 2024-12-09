@@ -1,0 +1,18 @@
+# ninja log v5
+6	370	7386283815935851	CMakeFiles/contest_5.dir/segment.cpp.obj	7a3172ee4d04d34c
+25	526	7387159591206236	CMakeFiles/contest_5.dir/src/ray.cpp.obj	2c0043e7fdb9176c
+17	343	7386283815667734	CMakeFiles/contest_5.dir/point.cpp.obj	9bf91bee8c8ae2bd
+673	830	7387159594182400	contest_5.exe	25596c161fbec1ee
+28	509	7387159591006525	CMakeFiles/contest_5.dir/src/line.cpp.obj	6c537c225104deb9
+36	469	7387159590636474	CMakeFiles/contest_5.dir/src/vector.cpp.obj	39545bcfefcaf592
+29	358	7386262777617200	CMakeFiles/contest_5.dir/vector.cpp.obj	9672b9c6257af671
+17	350	7387159589454941	CMakeFiles/contest_5.dir/src/IShape.cpp.obj	4810006e428180ad
+44	519	7387159591128834	CMakeFiles/contest_5.dir/src/circle.cpp.obj	fe7bc077c3461cf
+32	473	7387159590636474	CMakeFiles/contest_5.dir/src/point.cpp.obj	dcbaf7984ab482df
+10	366	7389616603483654	build.ninja	77d82c1433ad8dd9
+22	517	7387159591093991	CMakeFiles/contest_5.dir/src/segment.cpp.obj	4ba2fef7b8f0beb7
+10	365	7386283815895838	CMakeFiles/contest_5.dir/ray.cpp.obj	8d923624df7c29e3
+14	313	7386262546336234	CMakeFiles/contest_5.dir/IShape.cpp.obj	9c054699a138d555
+40	574	7387159591698681	CMakeFiles/contest_5.dir/src/polygon.cpp.obj	30f5960211f26ced
+49	673	7387159592690390	CMakeFiles/contest_5.dir/main.cpp.obj	8f29fb961807d9d8
+14	346	7386283815700495	CMakeFiles/contest_5.dir/line.cpp.obj	648d5c6f16fff130

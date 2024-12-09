@@ -1,0 +1,10 @@
+^C:\PROJECTS\HSE\CPP\BDZ\G\OUT\BUILD\BZD_G\CMAKEFILES\2B004815A2338F9B7E32E2D70A1EAD24\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/projects/hse/cpp/bdz/g -BC:/projects/hse/cpp/bdz/g/out/build/bzd_g --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/projects/hse/cpp/bdz/g/out/build/bzd_g/bzd_g.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
