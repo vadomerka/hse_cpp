@@ -8,9 +8,7 @@ struct Node {
   int key;
   Color color;
   Node *left;
-  int leftInd = -1;
   Node *right;
-  int rightInd = -1;
   Node *parent;
 
   Node(int key)
@@ -20,6 +18,7 @@ struct Node {
 class RedBlackTree {
 public:
   int count = 0;
+  int count2 = 0;
 private:
   Node *root;
   Node *NIL;
@@ -67,8 +66,11 @@ private:
       if (z->parent == z->parent->parent->left) {
         Node *y = z->parent->parent->right;
         if (y->color == RED) {
+          count2++;
           z->parent->color = BLACK;
+          count2++;
           y->color = BLACK;
+          count2++;
           z->parent->parent->color = RED;
           z = z->parent->parent;
         } else {
@@ -76,15 +78,20 @@ private:
             z = z->parent;
             leftRotate(z);
           }
+          count2++;
           z->parent->color = BLACK;
+          count2++;
           z->parent->parent->color = RED;
           rightRotate(z->parent->parent);
         }
       } else {
         Node *y = z->parent->parent->left;
         if (y->color == RED) {
+          count2++;
           z->parent->color = BLACK;
+          count2++;
           y->color = BLACK;
+          count2++;
           z->parent->parent->color = RED;
           z = z->parent->parent;
         } else {
@@ -92,7 +99,9 @@ private:
             z = z->parent;
             rightRotate(z);
           }
+          count2++;
           z->parent->color = BLACK;
+          count2++;
           z->parent->parent->color = RED;
           leftRotate(z->parent->parent);
         }
@@ -164,50 +173,16 @@ public:
 };
 
 int main() {
-  int n = 0;
-  std::cin >> n;
-  if (!n) {
-    std::cout << 0;
-    return 0;
-  }
-  int rootInd = 0;
-  std::cin >> rootInd;
-  rootInd--;
+  for (int i = 0; i < 1000; i++) {
+    RedBlackTree tree;
 
-  std::vector<Node*> tree (n, 0);
-  int number = 0;
-  int key = 0;
-  std::string left;
-  std::string right;
-  std::string color;
-  for (int i = 0; i < n; i++) {
-    std::cin >> number;
-    std::cin >> key;
-    Node* inputNode = new Node(key);
-    std::cin >> left;
-    if (left != "null") {
-      inputNode->leftInd = std::stoi(left) - 1;
+    std::vector<int> keys = {10, 85, 15, 70, 20, 60, 30, 50};
+    for (int j = 0; j < i; j++) {
+      tree.insert(j);
     }
-    std::cin >> right;
-    if (right != "null") {
-      inputNode->rightInd = std::stoi(right) - 1;
-    }
-    std::cin >> color;
-    if (color == "B") {
-      inputNode->color = BLACK;
-    }
-    tree[number - 1] = inputNode;
-  }
 
-  for (size_t i = 0; i < n; i++) {
-    if (tree[i]->leftInd != -1) {
-      tree[i]->left = tree[tree[i]->leftInd];
-    }
-    if (tree[i]->rightInd != -1) {
-      tree[i]->right = tree[tree[i]->rightInd];
-    }
+    std::cout << i << " " << tree.count << " " << tree.count2 << '\n';
   }
-  
 
   return 0;
 }
