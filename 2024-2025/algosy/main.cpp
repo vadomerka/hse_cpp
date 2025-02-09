@@ -1,188 +1,85 @@
-#include <iostream>
-#include <vector>
-#include <functional>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdint.h>
+#include <stdlib.h>
 
-enum Color { RED, BLACK };
 
-struct Node {
-  int key;
-  Color color;
-  Node *left;
-  Node *right;
-  Node *parent;
-
-  Node(int key)
-      : key(key), color(RED), left(nullptr), right(nullptr), parent(nullptr) {}
-};
-
-class RedBlackTree {
-public:
-  int count = 0;
-  int count2 = 0;
-private:
-  Node *root;
-  Node *NIL;
-
-  void leftRotate(Node *x) {
-    count++;
-    Node *y = x->right;
-    x->right = y->left;
-    if (y->left != NIL) {
-      y->left->parent = x;
+uint64_t phib(uint64_t n) {
+  uint64_t f = 1;
+  uint64_t s = 1;
+  for (uint64_t i = 1; i < n; i++) {
+    uint64_t tmp = s;
+    s = f + s;
+    f = tmp;
+    if (s > UINT64_MAX - f) {
+      printf("Phibonacchi stopped at: %ld\t", i);
+      return 0;
     }
-    y->parent = x->parent;
-    if (x->parent == nullptr) {
-      root = y;
-    } else if (x == x->parent->left) {
-      x->parent->left = y;
+  }
+  return s;
+}
+
+uint64_t fact(uint64_t n) {
+  uint64_t a = 1;
+  // uint64_t p = a;
+  for (uint64_t i = 2; i <= n; i++) {
+    // p = a;
+    a *= i;
+    if (a > UINT64_MAX / i) {
+      printf("Factorial stopped at: %ld\t", i);
+      return 0;
+    }
+  }
+  return a;
+}
+
+int main(int argc, char* argv[]) {
+  if (argc != 2) {
+    printf("Wrong arguments!\n");
+    return 0;
+  }
+  uint64_t num = std::strtoull(argv[1], NULL, 10);
+
+  // printf("id = %d, my gid = %d\n", (int)uid, (int)gid);
+  pid_t chpd = fork();
+  // printf("id = %d, my gid = %d\n", (int)uid, (int)gid);
+  // printf("chpd: %d", chpd);
+  // int num = 6;
+  if (chpd == -1) {
+    printf("error\n");
+    return 0;
+  }
+  if (chpd == 0) {
+    // printf("child spotted\n");
+    // fact
+    printf("Child calculates factorial: pid = %d, ppid = %d\n", getpid(), getppid());
+    uint64_t res = fact(num);
+    if (res == 0) {
+      printf("Overflow!\n");
     } else {
-      x->parent->right = y;
+      printf("Factorial: %ld\n", res);
     }
-    y->left = x;
-    x->parent = y;
+    exit(0);
+  } 
+  chpd = fork();
+  if (chpd == -1) {
+    printf("error\n");
+    return 0;
   }
-
-  void rightRotate(Node *y) {
-    count++;
-    Node *x = y->left;
-    y->left = x->right;
-    if (x->right != NIL) {
-      x->right->parent = y;
-    }
-    x->parent = y->parent;
-    if (y->parent == nullptr) {
-      root = x;
-    } else if (y == y->parent->left) {
-      y->parent->left = x;
-    } else {
-      y->parent->right = x;
-    }
-    x->right = y;
-    y->parent = x;
+  if (chpd == 0) {
+    printf("Parent outputs info of directory: pid = %d, ppid = %d\n", getpid(), getppid());
+    system("ls -l");
+    exit(0);
   }
-
-  void insertFixup(Node *z) {
-    while (z->parent && z->parent->color == RED) {
-      if (z->parent == z->parent->parent->left) {
-        Node *y = z->parent->parent->right;
-        if (y->color == RED) {
-          count2++;
-          z->parent->color = BLACK;
-          count2++;
-          y->color = BLACK;
-          count2++;
-          z->parent->parent->color = RED;
-          z = z->parent->parent;
-        } else {
-          if (z == z->parent->right) {
-            z = z->parent;
-            leftRotate(z);
-          }
-          count2++;
-          z->parent->color = BLACK;
-          count2++;
-          z->parent->parent->color = RED;
-          rightRotate(z->parent->parent);
-        }
-      } else {
-        Node *y = z->parent->parent->left;
-        if (y->color == RED) {
-          count2++;
-          z->parent->color = BLACK;
-          count2++;
-          y->color = BLACK;
-          count2++;
-          z->parent->parent->color = RED;
-          z = z->parent->parent;
-        } else {
-          if (z == z->parent->left) {
-            z = z->parent;
-            rightRotate(z);
-          }
-          count2++;
-          z->parent->color = BLACK;
-          count2++;
-          z->parent->parent->color = RED;
-          leftRotate(z->parent->parent);
-        }
-      }
-    }
-    root->color = BLACK;
+  // printf("parent spotted\n");
+  // phib
+  printf("Parent calculates phibonacchi: pid = %d, ppid = %d\n", getpid(), getppid());
+  uint64_t res = phib(num);
+  if (!res) {
+    printf("Overflow!\n");
+  } else {
+    printf("Phibonacchi: %ld\n", res);
   }
-
-  void print(Node *node, int indent = 0) const {
-    if (node == NIL)
-      return;
-
-    print(node->right, indent + 4);
-    std::cout << std::string(indent, ' ') << node->key
-              << (node->color == RED ? "(R)" : "(B)") << std::endl;
-    print(node->left, indent + 4);
-  }
-
-public:
-  RedBlackTree() {
-    NIL = new Node(0);
-    NIL->color = BLACK;
-    root = NIL;
-  }
-
-  void insert(int key) {
-    Node *z = new Node(key);
-    Node *y = nullptr;
-    Node *x = root;
-
-    while (x != NIL) {
-      y = x;
-      if (z->key < x->key) {
-        x = x->left;
-      } else {
-        x = x->right;
-      }
-    }
-
-    z->parent = y;
-    if (y == nullptr) {
-      root = z;
-    } else if (z->key < y->key) {
-      y->left = z;
-    } else {
-      y->right = z;
-    }
-
-    z->left = NIL;
-    z->right = NIL;
-    z->color = RED;
-
-    insertFixup(z);
-  }
-
-  void display() const { print(root); }
-
-  ~RedBlackTree() {
-    std::function<void(Node *)> deleteNode = [&](Node *node) {
-      if (node == NIL)
-        return;
-      deleteNode(node->left);
-      deleteNode(node->right);
-      delete node;
-    };
-    deleteNode(root);
-    delete NIL;
-  }
-};
-
-int main() {
-  for (int i = 0; i < 1000; i++) {
-    RedBlackTree tree;
-
-    std::vector<int> keys = {10, 85, 15, 70, 20, 60, 30, 50};
-    for (int j = 0; j < i; j++) {
-      tree.insert(j);
-    }
-
-    std::cout << i << " " << tree.count << " " << tree.count2 << '\n';
-  }
-
+  
   return 0;
 }
